@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --ff-heading: "Staatliches", cursive;
+  --ff-tittles: "Palanquin", sans-serif;
+  --ff-texting: "Open sans", sans-serif;
+
+  --bg-primary: hsl(233, 100%, 97%);
+
+  font-size: 62.5%;
+
+  --fs-body: 1.6rem;
+  --fs-heading: 4rem;
+  --fs-texting: 2rem;
+}
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-texting);
+  background-color: var(--bg-primary);
+}
+.page {
+  max-width: 38.4rem;
+  margin: 0 auto;
+}
+main {
+  max-width: 32rem;
+  margin: 1.4rem auto 0;
+}
+.cards {
+  display: grid;
+  gap: 3.2rem;
+}
+header {
+  font-family: var(--ff-heading);
+  background: #8e9aaf;
+  text-align: center;
+  height: 29.7rem;
+  padding: 3.2rem 0;
+}
+header img {
+  height: auto;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: var(--fs-heading);
+  line-height: 3.4rem;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+  color: #fff;
+  background: #cbc0d3;
+  padding: 0.8rem 8.6rem;
+  margin-top: 2rem;
+}
+header p {
+  display: none;
+}
+main p {
+  font-family: var(--ff-tittles);
+  font-size: var(--fs-texting);
+  line-height: 1.5rem;
+  color: #23053a;
+  text-align: center;
+  max-width: 30.5rem;
+  margin-bottom: 5rem;
+}
+.card img {
+  width: 100%;
+  border-radius: 2rem;
+  object-fit: cover;
+  transition: all 200ms;
+}
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+.card {
+  position: relative;
+  animation: topdown 1.6s;
+}
+div .card:nth-child(3) {
+  display: none;
+}
+div .card:nth-child(4) {
+  display: none;
+}
+.card h2 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-texting);
+  line-height: 3.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  height: 3.4rem;
+  padding: 0 2.4rem;
+  background: #feeafa;
+  border-radius: 20px;
+  color: #4a4e69;
+  display: inline-flex;
+  align-items: center;
+}
+footer p {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --ff-texting: "Roboto", sans-serif;
+    --ff-footer: "Open Sans", sans-serif;
+
+    --fs-heading: 4.8rem;
+    --fs-texting: 2.4rem;
+    --fs-footer: 1.4rem;
+  }
+  .page {
+    max-width: 128rem;
+    background: #fff;
+    display: grid;
+    grid-template-areas: "A B";
+  }
+  .page header {
+    grid-area: A;
+  }
+  .page main {
+    grid-area: B;
+  }
+  header {
+    max-width: 37.7rem;
+    height: 100%;
+  }
+  header h1 {
+    font-family: var(--ff-heading);
+    font-size: var(--fs-heading);
+    line-height: 3.4rem;
+    padding: 2rem 7rem;
+  }
+  header p {
+    display: inline-block;
+    font-family: var(--ff-texting);
+    font-size: 1.8rem;
+    line-height: 2rem;
+    padding: 5.2rem 5rem 0;
+    color: #fff;
+  }
+  main p {
+    display: none;
+  }
+  .card h2 {
+    display: none;
+  }
+  main {
+    max-width: 100%;
+    padding: 5.4rem 8rem 0 5.2rem;
+  }
+  main .cards {
+    display: grid;
+    gap: 3.2rem;
+    height: max-content;
+
+    grid-template-areas:
+      "A B C"
+      "D B F"
+      "D E F";
+  }
+  div .card:nth-child(1) {
+    grid-area: A;
+  }
+  div .card:nth-child(2) {
+    grid-area: B;
+  }
+  div .card:nth-child(3) {
+    display: inherit;
+    grid-area: C;
+  }
+  div .card:nth-child(4) {
+    display: inherit;
+    grid-area: D;
+  }
+  div .card:nth-child(5) {
+    grid-area: E;
+  }
+  div .cards .card:nth-child(6) {
+    grid-area: F;
+  }
+  footer {
+    text-align: center;
+    margin: 4rem auto;
+  }
+  footer a {
+    text-decoration: none;
+  }
+  footer span {
+    font-family: var(--ff-footer);
+    font-size: var(--fs-footer);
+    line-height: 2.8rem;
+    color: #4a4e69;
+  }
+
+  @keyframes topdown {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
